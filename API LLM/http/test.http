@@ -1,0 +1,38 @@
+### GET /health
+GET http://localhost:8000/health
+
+### GET /
+GET http://localhost:8000/
+
+
+### POST sin system prompt
+POST http://localhost:8000/generate
+Content-Type: application/json
+
+{
+    "prompt": "¿Cuál es el mejor lenguaje de programación?",
+    "temperature": 0.7,
+    "max_tokens": 100
+}
+
+### POST con system prompt
+POST http://localhost:8000/generate
+Content-Type: application/json
+
+{
+    "prompt": "¿Cuál es el mejor lenguaje de programación?",
+    "system_prompt": "Eres un agente fanatico de Javascript",
+    "temperature": 0.7,
+    "max_tokens": 100
+}
+    
+### POST estructurado
+POST http://localhost:8000/structured
+Content-Type: application/json
+
+{
+    "prompt": "Dame información sobre Squirtle",
+    "system_prompt": "Responde con información exacta sobre Pokemon. Incluye nombre, tipo y número de la Pokédex en español.",
+    "temperature": 0.7,
+    "max_tokens": 100
+}
